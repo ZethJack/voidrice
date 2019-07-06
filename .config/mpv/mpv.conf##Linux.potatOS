@@ -14,5 +14,5 @@ deband=no
 volume-max=100
 hwdec=auto
 ytdl-format=bestvideo[height<=?480][fps=30][codec!=?vp9]+bestaudio/best
-ytdl-raw-options='preffer-free-formats='
+ytdl-raw-options='prefer-free-formats='
 ytdl-raw-options='buffer-size=2048'
