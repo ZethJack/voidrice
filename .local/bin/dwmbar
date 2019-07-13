@@ -66,7 +66,7 @@ status() { \
 	done && echo "$delim"
 
 	# Date and time.
-	date '+%Y %b %d (%a) %I:%M%p'
+	date '+%Y %b %d (%a) %H:%M%p'
 	}
 
 update() { \
