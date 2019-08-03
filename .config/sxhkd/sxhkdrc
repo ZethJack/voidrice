@@ -92,13 +92,13 @@ super + {_,shift +} bracketright
 super + {_,shift +} bracketleft
 	mpc seek -{10,120}
 # Increase volume
-super + {equal,plus}
-	amixer sset Master {5,15}%+; refbar
-# Decrease volume
-super {_,shift +} + minus
-	amixer sset Master {5,15}%-; refbar
-super + shift + m
-	amixer sset Master toggle; refbar
+# super + {equal,plus}
+# 	amixer sset Master {5,15}%+; refbar
+# # Decrease volume
+# super {_,shift +} + minus
+# 	amixer sset Master {5,15}%-; refbar
+# super + shift + m
+# 	amixer sset Master toggle; refbar
 
 # Audiokeys
 XF86AudioMute
