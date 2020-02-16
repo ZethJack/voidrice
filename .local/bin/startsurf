@@ -1,0 +1,12 @@
+#!/bin/sh
+
+xidfile="/tmp/tabbed-$USER.xid"
+URL=${@:-https://ddg.gg/lite}
+
+if [ -f "$xidfile" ] && [ -O "$xidfile" ] && [ -r "$xidfile" ] && xprop -id "$(cat "$xidfile")" >/dev/null 2>&1
+then
+	exec surf -e "$(cat "$xidfile")" "$URL" &
+else
+	rm -f "$xidfile"
+	exec tabbed -d -n tabbed-surf -r 2 surf -e '' "$URL" >"$xidfile" 2>/dev/null
+fi

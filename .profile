@@ -8,7 +8,7 @@ export PATH="$PATH:$HOME/.local/bin/"
 # Default programs:
 export EDITOR="nvim"
 export TERMINAL="st"
-export BROWSER=(tabbed -r 2 surf -e www.duckduckgo.com/lite)
+export BROWSER="startsurf"
 export READER="zathura"
 export FILE="lf"
 
