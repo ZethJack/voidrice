@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 setbg &		# Set the background
-sxhkd &	# Bind keys
+sxhkd -m 1 &	# Bind keys
 # Switch to US international with Caps as Mod/Escape
 setxkbmap cz
 numlockx on
