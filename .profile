@@ -42,3 +42,6 @@ echo "$0" | grep "bash$" >/dev/null && [ -f ~/.bashrc ] && source "$HOME/.bashrc
 
 # Switch escape and caps if tty:
 sudo -n loadkeys ~/.local/share/larbs/ttymaps.kmap 2>/dev/null
+
+# add keychain
+eval `keychain --quiet --eval --gpg2 --agents ssh,gpg zeth_voyage E5F48DD60D9D47FE`
