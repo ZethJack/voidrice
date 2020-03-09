@@ -17,7 +17,7 @@ Channel gmail
 Expunge Both
 Master :gmail-remote:
 Slave :gmail-local:
-Patterns * !"[Gmail]/All Mail"
+Patterns *
 Create Both
 SyncState *
 MaxMessages 0
