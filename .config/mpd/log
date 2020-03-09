@@ -1,0 +1,8 @@
+Mar 09 01:54 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Mar 09 01:54 : exception: Failed to access /home/zeth/Music: No such file or directory
+Mar 09 01:54 : exception: inotify_add_watch() has failed: No such file or directory
+Mar 09 01:56 : client: [0] opened from 127.0.0.1:38702
+Mar 09 01:56 : client: [1] opened from 127.0.0.1:38706
+Mar 09 01:56 : client: [1] closed
+Mar 09 01:56 : client: [2] opened from 127.0.0.1:38712
+Mar 09 01:56 : client: [2] closed
