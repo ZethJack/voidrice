@@ -38,6 +38,11 @@ set clipboard+=unnamedplus
 " Disables automatic commenting on newline:
 	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+" adds ability to undo changes even if vim was previously closed
+	set undodir=$HOME/.local/share/vim/undo
+	set undofile
+	set undolevels=1000 undoreload=10000
+
 " Goyo plugin makes text more readable when writing prose:
 	map <leader>f :Goyo \| set bg=light \| set linebreak<CR>
 
@@ -63,6 +68,11 @@ set clipboard+=unnamedplus
 	map <C-j> <C-w>j
 	map <C-k> <C-w>k
 	map <C-l> <C-w>l
+" Move by screen lines instead of real lines
+	nnoremap j gj
+	nnoremap k gk
+	xnoremap j gj
+	xnoremap k gk
 
 " Check file in shellcheck:
 	map <leader>s :!clear && shellcheck %<CR>
