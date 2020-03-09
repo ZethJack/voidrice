@@ -67,5 +67,10 @@ lfcd () {
 
 bindkey -s '^o' 'lfcd\n'  # zsh
 
+#fzf keybindings and completion
+[ -f "/usr/share/fzf/key-bindings.zsh" ] && source "/usr/share/fzf/key-bindings.zsh"
+[ -f "/usr/share/ftf/completion.zsh" ] && source "/usr/share/fzf/completion.zsh"
+ eval `keychain --eval --quiet --gpg2 --agents ssh,gpg potatOS E5F48DD60D9D47FE`
+
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
