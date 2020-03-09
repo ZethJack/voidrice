@@ -20,7 +20,7 @@ set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
 set $hibernate sudo -A systemctl suspend
 workspace_layout tabbed
 # #---Window ws assignment---# #
-for_window [class="discord*"] move $ws3
+for_window [class="discord*"] move workspace $ws3
 
 # #---Dropdown Windows---# #
 # General dropdown window traits. The order can matter.
