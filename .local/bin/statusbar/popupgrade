@@ -2,7 +2,7 @@
 
 printf "Beginning upgrade.\\n"
 
-yay -Syu
+yay -Syu --noconfirm # upgrades should be automatic without user input.
 pkill -RTMIN+8 "${STATUSBAR:?}"
 
 printf "\\nUpgrade complete.\\nPress <Enter> to exit window.\\n\\n"
