@@ -7,11 +7,15 @@ PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magent
 [ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
+# enable History
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/cache/zsh/history
+
 autoload -U compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
-
 # Include hidden files in autocomplete:
 _comp_options+=(globdots)
 
