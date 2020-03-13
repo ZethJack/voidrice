@@ -18,6 +18,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'kovetskiy/sxhkd-vim'
+Plug 'mattn/calendar-vim'
 call plug#end()
 
 set bg=light
@@ -90,6 +91,13 @@ set clipboard+=unnamedplus
 " Open corresponding .pdf/.html or preview
 	map <leader>p :!opout <c-r>%<CR><CR>
 
+" vimwiki stuff
+	command! Diary VimwikiDiaryIndex
+	augroup vimwikigroup
+	    autocmd!
+	    " automatically update links on read diary
+	    autocmd BufRead,BufNewFile diary.md VimwikiDiaryGenerateLinks
+	augroup end
 " Runs a script that cleans out tex build files whenever I close out of a .tex file.
 	autocmd VimLeave *.tex !texclear %
 

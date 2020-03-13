@@ -21,6 +21,9 @@ set $hibernate sudo -A systemctl suspend
 workspace_layout tabbed
 # #---Window ws assignment---# #
 for_window [class="discord*"] move workspace $ws3
+for_window [class="Steam*"] move workspace $ws4
+for_window [class="Brave*"] move workspace $ws2
+for_window [class="Telegram*"] move workspace $ws3
 
 # #---Dropdown Windows---# #
 # General dropdown window traits. The order can matter.
@@ -59,7 +62,7 @@ bindsym $mod+grave		exec --no-startup-id dmenuunicode
 ##bindsym $mod+asciitilde
 
 #STOP/HIDE EVERYTHING:
-bindsym $mod+Shift+Delete	exec --no-startup-id amixer sset Master mute ; exec --no-startup-id mpc pause && pkill -RTMIN+10 i3blocks ; exec --no-startup-id pauseallmpv; workspace 0; exec $term -e htop ; exec $term -e $FILE
+bindsym $mod+Shift+Delete	exec --no-startup-id pulsemixer --mute ; exec --no-startup-id mpc pause && pkill -RTMIN+10 i3blocks ; exec --no-startup-id pauseallmpv; workspace 0; exec $term -e htop ; exec $term -e $FILE
 
 # Show selection:
 bindsym $mod+Insert		exec --no-startup-id showclip
@@ -81,8 +84,8 @@ bindsym $mod+Shift+r		exec --no-startup-id winresize
 bindsym $mod+t			split toggle
 bindsym $mod+Shift+t		gaps inner current set 15; gaps outer current set 15
 
-bindsym $mod+y			exec $term -e calcurse -D ~/.config/calcurse
-bindsym $mod+Shift+y		exec --no-startup-id i3resize left
+bindsym $mod+z			exec $term -e calcurse -D ~/.config/calcurse
+bindsym $mod+Shift+z		exec --no-startup-id i3resize left
 
 bindsym $mod+u			exec --no-startup-id ddspawn tmuxdd
 bindsym $mod+Shift+u		exec --no-startup-id i3resize down
@@ -131,8 +134,8 @@ bindsym $mod+l			focus right
 bindsym $mod+Shift+l		move right 30
 bindsym $mod+Ctrl+l		move workspace to output right
 
-bindsym $mod+z			gaps outer current plus 5
-bindsym $mod+Shift+z		gaps outer current minus 5
+bindsym $mod+y			gaps outer current plus 5
+bindsym $mod+Shift+y		gaps outer current minus 5
 
 bindsym $mod+x			exec --no-startup-id mpc pause; exec --no-startup-id pauseallmpv ; exec --no-startup-id i3lock -e -f -c 1d2021 ; exec --no-startup-id xset dpms force off
 bindsym $mod+Shift+x		exec --no-startup-id prompt "Shutdown computer?" "$shutdown"
@@ -276,7 +279,7 @@ bindsym XF86Launch1		exec --no-startup-id xset dpms force off
 
 # #---Extra XF86 Keys---# #
 # bindsym XF86AudioMute		exec --no-startup-id amixer sset Master toggle && pkill -RTMIN+10 i3blocks
-bindsym XF86AudioMute		exec --no-startup-id pulsemixer --toggle-mute
+bindsym XF86AudioMute		exec --no-startup-id pulsemixer --toggle-mute && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioLowerVolume	exec --no-startup-id amixer sset Master 5%- && pkill -RTMIN+10 i3blocks
 bindsym Shift+XF86AudioLowerVolume	exec --no-startup-id amixer sset Master 10%- && pkill -RTMIN+10 i3blocks
 bindsym Control+XF86AudioLowerVolume	exec --no-startup-id amixer sset Master 1%- && pkill -RTMIN+10 i3blocks
