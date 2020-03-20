@@ -34,6 +34,7 @@ alias \
 	p="sudo pacman" \
 	mailsync="pass unlock && mailsync" \
 	tat="tmux a || tmux" \
+	tootstream="source ~/.local/bin/tootstream/bin/activate && tootstream" \
 
 # This alias is important. It enables the `pauseallmpv` command.
 alias mpv="mpv --input-ipc-server=/tmp/mpvsoc$(date +%s)"

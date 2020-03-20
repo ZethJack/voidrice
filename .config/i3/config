@@ -24,6 +24,7 @@ for_window [class="discord*"] move workspace $ws3
 for_window [class="Steam*"] move workspace $ws4
 for_window [class="Brave*"] move workspace $ws2
 for_window [class="Telegram*"] move workspace $ws3
+for_window [class="qtwaw"] move workspace $ws3
 
 # #---Dropdown Windows---# #
 # General dropdown window traits. The order can matter.
