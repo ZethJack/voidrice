@@ -14,6 +14,7 @@ passwordeval "pass mutt-wizard-gmail"
 
 account fmail
 host smtp.forpsi.com
+tls_starttls off
 port 465
 from zeth@zethjack.eu
 user zeth@zethjack.eu

@@ -19,6 +19,7 @@ Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'kovetskiy/sxhkd-vim'
 Plug 'mattn/calendar-vim'
+Plug 'krasjet/auto.pairs'
 call plug#end()
 
 set bg=light
