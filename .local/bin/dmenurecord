@@ -33,10 +33,10 @@ screencast() { \
 	-framerate 60 \
 	-s $(xdpyinfo | grep dimensions | awk '{print $2;}') \
 	-i $DISPLAY \
-	-f alsa -i default \
+	-f pulse -i default \
 	-r 30 \
  	-c:v libx264rgb -crf 0 -preset ultrafast -c:a flac \
-	"$HOME/screencast-$(date '+%y%m%d-%H%M-%S').mkv" &
+	"$HOME/vids/screencasts/screencast-$(date '+%d%m%y-%H%M-%S').mkv" &
 	echo $! > /tmp/recordingpid
 	updateicon "⏺️🎙️"
        	}
@@ -46,7 +46,7 @@ video() { ffmpeg \
 	-s $(xdpyinfo | grep dimensions | awk '{print $2;}') \
 	-i $DISPLAY \
  	-c:v libx264 -qp 0 -r 30 \
-	"$HOME/video-$(date '+%y%m%d-%H%M-%S').mkv" &
+	"$HOME/vids/recordings/video-$(date '+%y%m%d-%H%M-%S').mkv" &
 	echo $! > /tmp/recordingpid
 	updateicon "⏺️"
 	}
@@ -55,7 +55,7 @@ webcamhidef() { ffmpeg \
 	-f v4l2 \
 	-i /dev/video0 \
 	-video_size 1920x1080 \
-	"$HOME/webcam-$(date '+%y%m%d-%H%M-%S').mkv" &
+	"$HOME/vids/webcams/webcam-$(date '+%y%m%d-%H%M-%S').mkv" &
 	echo $! > /tmp/recordingpid
 	updateicon "🎥"
 	}
@@ -64,7 +64,7 @@ webcam() { ffmpeg \
 	-f v4l2 \
 	-i /dev/video0 \
 	-video_size 640x480 \
-	"$HOME/webcam-$(date '+%y%m%d-%H%M-%S').mkv" &
+	"$HOME/vids/webcam/webcam-$(date '+%y%m%d-%H%M-%S').mkv" &
 	echo $! > /tmp/recordingpid
 	updateicon "🎥"
 	}
@@ -72,9 +72,9 @@ webcam() { ffmpeg \
 
 audio() { \
 	ffmpeg \
-	-f alsa -i default \
+	-f pulse -i default \
 	-c:a flac \
-	"$HOME/audio-$(date '+%y%m%d-%H%M-%S').flac" &
+	"$HOME/vids/audiorecord/audio-$(date '+%y%m%d-%H%M-%S').flac" &
 	echo $! > /tmp/recordingpid
 	updateicon "🎙️"
 	}
