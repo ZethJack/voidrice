@@ -34,7 +34,8 @@ alias \
 	p="sudo pacman" \
 	mailsync="pass unlock && mailsync" \
 	tat="tmux a || tmux" \
-	tootstream="source ~/.local/bin/tootstream/bin/activate && tootstream" \
+	tootstream="~/.local/bin/tootstream/bin/python3 ~/.local/bin/tootstream/bin/tootstream" \
+	bbj="~/.local/bin/bbj/bin/python3 ~/.local/bin/bbj/clients/urwid/main.py --host bbj.tildeverse.org \"$@\""
 
 # This alias is important. It enables the `pauseallmpv` command.
 alias mpv="mpv --input-ipc-server=/tmp/mpvsoc$(date +%s)"
