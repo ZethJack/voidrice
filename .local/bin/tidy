@@ -1,0 +1,22 @@
+#!/bin/sh
+
+img="$HOME/Pics"
+dox="$HOME/Docs"
+vid="$HOME/Vids"
+mus="$HOME/Music"
+
+src_dir="$(pwd)"
+
+for file in $(ls -1 $src_dir); do
+	ext=$(awk -F'.' '{print $2}' <<< $file)
+
+	case $ext in
+		'pdf'|'doc'|'docx'|'txt'|'xls'|'xlsx'|'ods'|'odt') exec mv "$file" "$dox" ;;
+		'mp3'|'m4a'|'ogg'|'waw'|'flac') exec mv "$file" "$mus" ;;
+		'png'|'gif'|'bmp'|'jpg'|'jpeg') exec mv "$file" "$img" ;;
+		'svg') exec mv "$file" "$img/svg" ;;
+		'mp4'|'webm'|'mpg'|'mpeg'|'flv'|'mkv'|'avi') exec mv "$file" "$vid" ;;
+	esac
+
+done
+echo "All done!"

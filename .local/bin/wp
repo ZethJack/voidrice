@@ -1,3 +1,3 @@
 #!/bin/sh
 
-find ~/pics/wallpapers -type f | shuf | sxiv -
+find ~/Pics/wallpapers -type f | shuf | sxiv -
